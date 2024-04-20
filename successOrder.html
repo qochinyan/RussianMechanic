@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Russian Mechanic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=PT+Sans+Narrow:wght@400;700&display=swap"
+      rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=PT+Sans+Narrow:wght@400;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="./successOrder.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div style="display: none" class="header-hr"><hr / ></div>
+        <a class="logo-a" href="./home.html">
+          <img class="logo" src="images/logo.png" alt=""
+        /></a>
+        <div class="links">
+          <a href="./snow.html" style="text-decoration: none">
+            <div class="snowboard">
+              <img src="images/headsnow.png" alt="" />
+              <p>СНЕГОХОДЫ</p>
+            </div>
+          </a>
+
+          <a href="./moto.html" style="text-decoration: none">
+            <div class="mototech">
+              <img src="images/headmoto.png" alt="" />
+              <p>МОТОТЕХНИКА</p>
+            </div>
+          </a>
+          <a href="./authorisation.html" style="text-decoration: none">
+            <div class="avatar">
+              <img src="images/headavatar.png" alt="" />
+              <p>Войти</p>
+            </div>
+          </a>
+          <a href="./order.html" style="text-decoration: none">
+            <div class="cart">
+              <img src="images/headcart.png" alt="" />
+              <p>Корзина</p>
+            </div>
+          </a>
+        </div>
+      </header>
+      <div class="head">
+        <img src="./images/summer_bg.png" alt="" />
+      </div>
+      <div class="content-box">
+        <div class="content-1">
+          <div class="block">
+            <div class="success">
+              <img src="./images/success.png" alt="" class="success" />
+              <p style="font-weight: bold">Ваш заказ оформлен!</p>
+              <p>№ заказа: <span class="number">220120</span></p>
+              <p>В ближайшее время с Вами свяжеться наш менеджер</p>
+            </div>
+
+            <div class="blocks"></div>
+          </div>
+        </div>
+        <div class="content-2">
+          <p class="form-head">Персональные данные</p>
+          <form action="">
+            <div class="left">
+              <div class="inputs">
+                <input disabled name="name" type="text" placeholder="Ф.И.О." />
+                <input disabled name="number" type="text" placeholder="Номер телефона" />
+                <input disabled name="email" type="text" placeholder="E-mail" />
+                <input disabled name="adress" type="text" placeholder="Адрес доставки" />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <footer>© 2004–2024 АО «Русская механика»</footer>
+    </div>
+    <script>
+      let userData = {
+        name: "name surname",
+        number: "+2321423432",
+        email: "ssds@gmail.com",
+        adress: "afefqwa 2/4 efjs",
+      };
+      let inputs = document.querySelectorAll("form input")
+      inputs.forEach(e=>e.placeholder = userData[e.name])
+      let orderNumber = "221112";
+      let orders = [
+        {
+          src: "./images/cardImage.png",
+          head: "КОМПЛЕКТ ЗАЩИТ ДНИЩА ДЛЯ ATV RM 800 DUO",
+          articul: "Артикул 0012568",
+          price: "27100 ₽",
+        },
+        {
+          src: "./images/cardImage.png",
+          head: "КОМПЛЕКТ ЗАЩИТ ДНИЩА ДЛЯ ATV RM 800 DUO",
+          articul: "Артикул 0012568",
+          price: "27100 ₽",
+        },
+      ];
+      let blocks = document.querySelector(".content-1 .blocks");
+      blocks.innerHTML = orders
+        .map(
+          (e) => `<div class="order-block">
+                  <div class="left">
+                    <img src="${e.src}" />
+                    <div class="texts">
+                        <p>${e.head}</p>
+                        <p>${e.articul}</p>
+                    </div>
+                    </div>
+                    <div class="right">
+                        
+                        <p class="price">
+                            ${e.price}
+                        </p>
+                  
+                    </div>
+                </div>`
+        )
+        .join("");
+      let amount = "200 100 ₽";
+      let span = document.createElement("span");
+      span.className = "total";
+      span.innerHTML = `<p>Всего</p><p>${amount}</p>`;
+      blocks.appendChild(span);
+      // orden No
+      document.querySelector(
+        ".content-box .content-1 .block .success p span"
+      ).innerText = orderNumber;
+    </script>
+  </body>
+</html>

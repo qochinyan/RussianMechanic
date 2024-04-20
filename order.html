@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Russian Mechanic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=PT+Sans+Narrow:wght@400;700&display=swap"
+      rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=PT+Sans+Narrow:wght@400;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="./order.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div style="display: none" class="header-hr"><hr / ></div>
+        <a class="logo-a" href="./home.html">
+          <img class="logo" src="images/logo.png" alt=""
+        /></a>
+        <div class="links">
+          <a href="./snow.html" style="text-decoration: none">
+            <div class="snowboard">
+              <img src="images/headsnow.png" alt="" />
+              <p>СНЕГОХОДЫ</p>
+            </div>
+          </a>
+
+          <a href="./moto.html" style="text-decoration: none">
+            <div class="mototech">
+              <img src="images/headmoto.png" alt="" />
+              <p>МОТОТЕХНИКА</p>
+            </div>
+          </a>
+          <a href="./authorisation.html" style="text-decoration: none">
+            <div class="avatar">
+              <img src="images/headavatar.png" alt="" />
+              <p>Войти</p>
+            </div>
+          </a>
+          <a href="./order.html" style="text-decoration: none">
+            <div class="cart">
+              <img src="images/headcart.png" alt="" />
+              <p>Корзина</p>
+            </div>
+          </a>
+        </div>
+      </header> 
+      <div class="head">
+        <img src="images/summer_bg.png" alt="" />
+      </div>
+      <div class="content-box">
+        <div class="content-1">
+          <div class="block">
+            <h1>Оформоение заказа</h1>
+            <div class="blocks"></div>
+          </div>
+        </div>
+        <div class="content-2">
+          <p class="form-head">Персональные данные</p>
+          <form action="">
+            <div class="left">
+              <div class="inputs">
+                <input type="text" placeholder="Ф.И.О." />
+                <input type="text" placeholder="Номер телефона" />
+                <input type="text" placeholder="E-mail" />
+                <input type="text" placeholder="Адрес доставки" />
+              </div>
+            </div>
+
+            <a href="./successOrder.html">
+              <img src="./images/accBut.png" alt="" />
+            </a>
+          </form>
+        </div>
+      </div>
+
+      <footer>© 2004–2024 АО «Русская механика»</footer>
+    </div>
+    <script>
+      let orders = [
+        {
+          src: "./images/quad-1.png",
+          head: "КОМПЛЕКТ ЗАЩИТ ДНИЩА ДЛЯ ATV RM 800 DUO",
+          articul: "Артикул 0012568",
+          count: 1,
+          price: 27100,
+        },
+        {
+          src: "./images/cardImage.png",
+          head: "КОМПЛЕКТ ЗАЩИТ ДНИЩА ДЛЯ ATV RM 800 DUO",
+          articul: "Артикул 0012568",
+          price: 27100,
+          count: 1,
+        },
+      ];
+      let blocks = document.querySelector(".content-1 .blocks");
+      function renderBlocks() {
+        blocks.innerHTML = orders
+          .map((e, i) => {
+            // main block
+            let OB = document.createElement("div");
+            OB.className = "order-block";
+            // left
+            let left = document.createElement("div");
+            left.className = "left";
+            left.innerHTML = `
+                <img src="${e.src}" />
+                <div class="texts">
+                  <p>${e.head}</p>
+                  <p>${e.articul}</p>
+                  </div>`;
+            OB.appendChild(left);
+            // right
+            let right = document.createElement("div");
+            right.className = "right";
+            right.innerHTML = `
+                    <div class="right">
+
+                    </div>
+                  `;
+            OB.appendChild(right);
+            let price = document.createElement("p");
+            price.innerText = e.price * e.count + " ₽";
+            price.className = "price";
+            let x = document.createElement("img");
+            x.className = "x";
+            x.src = "images/x.png";
+            x.style = "cursor:pointer";
+            // cubes
+            let cubes = document.createElement("div");
+            cubes.className = "cubes";
+            let minus = document.createElement("span");
+            minus.className = "minus";
+            minus.innerText = "-";
+            minus.addEventListener("click", () => {
+              console.log("click");
+            });
+            let count = document.createElement("span");
+            count.className = "count";
+            count.innerHTML = e.count;
+            let plus = document.createElement("span");
+            plus.className = "plus";
+            plus.innerText = "+";
+            plus.addEventListener("click", () => {
+              console.log("click");
+            });
+            cubes.appendChild(minus);
+            cubes.appendChild(count);
+            cubes.appendChild(plus);
+            OB.querySelector(".right").appendChild(cubes);
+            OB.querySelector(".right").appendChild(price);
+            OB.querySelector(".right").appendChild(x);
+
+            return OB.outerHTML;
+          })
+          .join("");
+      }
+      renderBlocks();
+      document
+        .querySelectorAll(".content-1 .blocks .order-block")
+        .forEach((el, i) => {
+          el.querySelector(".right .minus").addEventListener("click", () => {
+            console.log("click", changeCount("-", i));
+          });
+          el.querySelector(".right .plus").addEventListener("click", () => {
+            console.log("click", changeCount("+", i));
+          });
+          el.querySelector(".right .x").addEventListener("click", () => {
+            console.log("click", removeOrder(i));
+          });
+        });
+      // function removeOrder(index) {
+      //   orders = orders.filter((e, i) => i !== index);
+      //   if (orders.length) {
+      //     renderBlocks();
+      //   } else {
+      //     document.querySelector(".content-1 .blocks .order-block").remove();
+      //   }
+      //   console.log(orders);
+      // }
+      let amount = "200 100 ₽";
+      let span = document.createElement("span");
+      span.className = "total";
+      span.innerHTML = `<p>Всего</p><p class="total">${amount}</p>`;
+      blocks.appendChild(span);
+      // counters;
+      function changeCount(move, i) {
+        switch (move) {
+          case "+":
+            console.log(move, orders[i].count);
+            // debug
+            orders[i].count++;
+            document
+              .querySelectorAll(".content-1 .blocks .order-block")
+              [i].querySelector(".right .cubes .count").innerHTML =
+              orders[i].count;
+            document
+              .querySelectorAll(".content-1 .blocks .order-block")
+              [i].querySelector(".right .price").innerText =
+              orders[i].count * orders[i].price + " ₽";
+            changeTotal();
+
+            break;
+          case "-":
+            orders[i].count > 0 && orders[i].count--;
+            console.log(move, orders[i].count);
+            document
+              .querySelectorAll(".content-1 .blocks .order-block")
+              [i].querySelector(".right .cubes .count").innerHTML =
+              orders[i].count;
+            document
+              .querySelectorAll(".content-1 .blocks .order-block")
+              [i].querySelector(".right .price").innerText =
+              orders[i].count * orders[i].price + " ₽";
+            changeTotal();
+          // debug
+        }
+      }
+      function changeTotal() {
+        let total = orders.reduce(
+          (a, b) => a.count * a.price + b.count * b.price
+        );
+        blocks.querySelector(".total .total").innerText = total + " ₽";
+      }
+    </script>
+  </body>
+</html>

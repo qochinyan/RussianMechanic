@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Russian Mechanic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=PT+Sans+Narrow:wght@400;700&display=swap"
+      rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=PT+Sans+Narrow:wght@400;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="./home.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div style="display: none" class="header-hr"><hr / ></div>
+        <a class="logo-a" href="./home.html">
+          <img class="logo" src="images/logo.png" alt=""
+        /></a>
+        <div class="links">
+          <a href="./snow.html" style="text-decoration: none">
+            <div class="snowboard">
+              <img src="images/headsnow.png" alt="" />
+              <p>СНЕГОХОДЫ</p>
+            </div>
+          </a>
+
+          <a href="./moto.html" style="text-decoration: none">
+            <div class="mototech">
+              <img src="images/headmoto.png" alt="" />
+              <p>МОТОТЕХНИКА</p>
+            </div>
+          </a>
+          <a href="./authorisation.html" style="text-decoration: none">
+            <div class="avatar">
+              <img src="images/headavatar.png" alt="" />
+              <p>Войти</p>
+            </div>
+          </a>
+          <a href="./order.html" style="text-decoration: none">
+            <div class="cart">
+              <img src="images/headcart.png" alt="" />
+              <span class="count">2</span>
+              <p>Корзина</p>
+            </div>
+          </a>
+        </div>
+      </header>
+      <div class="head">
+        <div class="left">
+          <img class="bg" src="images/headSumHalf.png" alt="" /><img
+            src="images/head-quadro.png"
+            alt=""
+            class="moto" />
+        </div>
+        <div class="right">
+          <img class="bg" src="images/headSnowHalf.png" alt="" /><img
+            src="images/head-snowboard.png"
+            alt=""
+            class="moto" />
+        </div>
+      </div>
+      <div class="mobile-techs">
+        <a href="./snow.html"
+          ><div class="mobile-tech">
+            <!-- <a href="/snow.html" style="text-decoration: none"> -->
+            <div class="block1"></div>
+            <!-- </a> -->
+            <div class="block2"></div>
+
+            <div class="block3">
+              <img src="images/headsnow.png" alt="" />
+              <p>СНЕГОХОДЫ</p>
+            </div>
+
+            <!-- </a> -->
+          </div>
+        </a>
+        <a href="./moto.html">
+          <div class="mobile-tech">
+            <!-- <a href="./moto.html" style="text-decoration: none;"> -->
+            <div class="block1"></div>
+            <!-- </a> -->
+            <div class="block2"></div>
+            <div class="block3">
+              <img src="images/headmoto.png" alt="" />
+              <p>МОТОТЕХНИКА</p>
+            </div>
+          </div></a
+        >
+      </div>
+      <div class="content-1">
+        <h1>Каталог Снегоходов</h1>
+        <div class="techs"></div>
+      </div>
+      <div class="content-2">
+        <h1>Каталог мототехники</h1>
+        <div class="techs"></div>
+      </div>
+      <footer>© 2004–2023 АО «Русская механика»</footer>
+    </div>
+    <script>
+      let motos = [
+        {
+          name: "РМ 800 Т",
+          img: "images/quad-1.png",
+          discount: { erased: "27 100 ₽", new: "149 000 ₽*" },
+          price: "",
+        },
+        {
+          name: "РМ 800 Т",
+          img: "images/quad-1.png",
+          discount: { erased: "", new: "" },
+          price: "27 100 ₽",
+        },
+        {
+          name: "РМ 800 Т",
+          img: "images/quad-1.png",
+          discount: { erased: "", new: "" },
+          price: "27 100 ₽",
+        },
+        {
+          name: "РМ 800 Т",
+          img: "images/quad-1.png",
+          discount: { erased: "", new: "" },
+          price: "27 100 ₽",
+        },
+      ];
+      let snowboards = [
+        {
+          name: "ФРОНТЬЕР 1000",
+          img: "images/snow-1.png",
+          discount: { erased: "", new: "" },
+          price: "1 149 000 ₽*",
+        },
+        {
+          name: "ТАЙГА ПАТРУЛЬ 800 SWT",
+          img: "images/snow-2.png",
+          discount: { erased: "", new: "" },
+          price: "1 149 000 ₽*",
+        },
+        {
+          name: "ТАЙГА ПАТРУЛЬ 551 SWT",
+          img: "images/snow-3.png",
+          discount: { erased: "", new: "" },
+          price: "1 149 000 ₽*",
+        },
+        {
+          name: "ТАЙГА ПАТРУЛЬ 550 SWT",
+          img: "images/snow-4.png",
+          discount: { erased: "", new: "" },
+          price: "1 149 000 ₽*",
+        },
+        {
+          name: "ФРОНТЬЕР 1000",
+          img: "images/snow-1.png",
+          discount: { erased: "", new: "" },
+          price: "1 149 000 ₽*",
+        },
+        {
+          name: "ТАЙГА ПАТРУЛЬ 800 SWT",
+          img: "images/snow-2.png",
+          discount: { erased: "", new: "" },
+          price: "1 149 000 ₽*",
+        },
+        {
+          name: "ТАЙГА ПАТРУЛЬ 551 SWT",
+          img: "images/snow-3.png",
+          discount: { erased: "", new: "" },
+          price: "1 149 000 ₽*",
+        },
+        {
+          name: "ТАЙГА ПАТРУЛЬ 550 SWT",
+          img: "images/snow-4.png",
+          discount: { erased: "", new: "" },
+          price: "1 149 000 ₽*",
+        },
+        {
+          name: "ФРОНТЬЕР 1000",
+          img: "images/snow-1.png",
+          discount: { erased: "", new: "" },
+          price: "1 149 000 ₽*",
+        },
+        {
+          name: "ТАЙГА ПАТРУЛЬ 800 SWT",
+          img: "images/snow-2.png",
+          discount: { erased: "", new: "" },
+          price: "1 149 000 ₽*",
+        },
+        {
+          name: "ТАЙГА ПАТРУЛЬ 551 SWT",
+          img: "images/snow-3.png",
+          discount: { erased: "", new: "" },
+          price: "1 149 000 ₽*",
+        },
+        {
+          name: "ТАЙГА ПАТРУЛЬ 550 SWT",
+          img: "images/snow-4.png",
+          discount: { erased: "", new: "" },
+          price: "1 149 000 ₽*",
+        },
+      ];
+
+      document.querySelector(".techs ").innerHTML = snowboards
+        .map(
+          (moto) => `
+            <div class="tech">
+
+            <a href="moto.html" style="text-decoration:none;color:unset; ">
+              <div class="tech-block">
+                <img src="${moto.img}" alt="" />
+                <div class="chars">
+                  <p class="name">${moto.name}</p>
+                  <div class="prices">
+                    <div class="${moto.price ? "price" : "discount"}">
+                      <div class="discount-block">
+                        <div class="tape">Цена со скидкой</div>
+                        <div>
+                          <p class="erased">${moto.discount.erased}</p>
+                    <p class="new">${moto.discount.new}</p>
+                        </div>
+                      </div>
+                      <p class="price">27100 ₽</p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            </a>
+            </div>
+            `
+        )
+        .join("");
+      document.querySelector(".content-2 .techs").innerHTML = motos
+        .map(
+          (moto) => `
+            <div class="tech">
+
+            <a href="snow.html" style="text-decoration:none;color:unset;  ">
+              <div class="tech-block">
+                <img src="${moto.img}" alt="" />
+                <div class="chars">
+                  <p class="name">${moto.name}</p>
+                  <div class="prices">
+                    <div class="${moto.price ? "price" : "discount"}">
+                      <div class="discount-block">
+                        <div class="tape">Цена со скидкой</div>
+                        <div>
+                          <p class="erased">${moto.discount.erased}</p>
+                    <p class="new">${moto.discount.new}</p>
+                        </div>
+                      </div>
+                      <p class="price">27100 ₽</p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            </a>
+            </div>
+            `
+        )
+        .join("");
+      // console.log(techs);
+    </script>
+  </body>
+</html>

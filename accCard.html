@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Russian Mechanic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=PT+Sans+Narrow:wght@400;700&display=swap"
+      rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=PT+Sans+Narrow:wght@400;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="./accCard.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="pop-up">
+        <div class="box">
+          <div class="top">
+            <img src="./images/headcart.png" alt="" /><span
+              >Товар добавлен в корзину</span
+            >
+          </div>
+          <div class="bottom">
+            <button><a>Продолжить покупки</a></button>
+            <button><a href="./order.html">Перейти к оформлению</a></button>
+          </div>
+        </div>
+      </div>
+      <header>
+        <div style="display: none" class="header-hr"><hr / ></div>
+        <a class="logo-a" href="./home.html">
+          <img class="logo" src="images/logo.png" alt=""
+        /></a>
+        <div class="links">
+          <a href="./snow.html" style="text-decoration: none">
+            <div class="snowboard">
+              <img src="images/headsnow.png" alt="" />
+              <p>СНЕГОХОДЫ</p>
+            </div>
+          </a>
+
+          <a href="./moto.html" style="text-decoration: none">
+            <div class="mototech">
+              <img src="images/headmoto.png" alt="" />
+              <p>МОТОТЕХНИКА</p>
+            </div>
+          </a>
+          <a
+            class="avatar-a"
+            href="./authorisation.html"
+            style="text-decoration: none">
+            <div class="avatar">
+              <img src="images/headavatar.png" alt="" />
+              <p>Войти</p>
+            </div>
+          </a>
+          <a class="cart-a" href="./order.html" style="text-decoration: none">
+            <div class="cart">
+              <img src="images/headcart.png" alt="" />
+              <p>Корзина</p>
+            </div>
+          </a>
+        </div>
+      </header>
+      <div class="head">
+        <img src="images/summer_bg.png" alt="" />
+      </div>
+      <div class="content-box">
+        <div class="left">
+          <a class="back-but" href="./acc.html"
+            ><- вернуться к списку аксессуаров для</a
+          >
+          <div class="main-img">
+            <img class="main-img-img" src="images/cardImage.png" alt="" />
+          </div>
+          <div class="choose-image">
+            <img
+              onclick="changeImage('back')"
+              src="images/imgArrow.png"
+              alt=""
+              style="cursor: pointer"
+              class="leftArr" />
+            <div class="images">
+              <img src="images/cardImage.png" alt="" />
+              <img src="images/cardImage.png" alt="" />
+              <img src="images/cardImage.png" alt="" />
+              <img src="images/cardImage.png" alt="" />
+            </div>
+            <img
+              onclick="changeImage('forward')"
+              src="images/imgArrow.png"
+              alt=""
+              class="rightArr"
+              style="cursor: pointer" />
+          </div>
+        </div>
+        <div class="right">
+          <div class="top">
+            <p class="head">КОМПЛЕКТ ЗАЩИТ ДНИЩА ДЛЯ ATV RM 800 DUO</p>
+            <p class="articul">Артикул 0012568</p>
+            <p class="weight">Вес: 17500 грамм</p>
+            <p class="desc">
+              ОПИСАНИЕ ТОВАРА Алюминий 4 мм, лазерная резка, глубокий штамп,
+              порошковая окраска. Установка в штатные места, скрытый крепеж.
+              Защита порогов и отверстия для удаления грязи. Специальные силовые
+              тарельчатые шайбы для крепления. ДШВ упаковки: 1100*750*250 мм
+            </p>
+            <p class="weight-kg">Вес: 17,5 кг</p>
+          </div>
+
+          <div class="book">
+            <div class="cubes">
+              <span onclick="changeCount('-')" class="minus">-</span
+              ><span class="count">1</span
+              ><span onclick="changeCount('+')" class="plus">+</span>
+            </div>
+            <div class="prices"></div>
+            <a class="popup-open" href="#">
+              <button><img src="images/accBut.png" alt="" /></button
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <footer>© 2004–2024 АО «Русская механика»</footer>
+      <script>
+        let thisMotoData = {
+          name: "PM 800 T",
+          price: 27100,
+          count: 1,
+          charachters: [],
+          discount: { new: "23442 ₽", erased: "26222₽" },
+        };
+        //
+        document.querySelector(".content-box .left .back-but").innerText +=
+          " " + thisMotoData.name;
+        let prices = document.querySelector(".book .prices");
+
+        let priceBlock = document.createElement("div");
+        priceBlock.innerHTML = `<div class="${
+          thisMotoData.discount.new ? "discount" : "price"
+        }">
+                <div class="discount-block">
+                  <div class="tape">Цена со скидкой</div>
+                  <div>
+                    <p class="erased">${
+                      thisMotoData.discount.erased ?? ""
+                    } ₽</p>
+                    <p class="new">${thisMotoData.discount.new ?? ""} ₽</p>
+                  </div>
+                </div>
+                <p class="price">27100 ₽</p>
+              </div>`;
+        prices.appendChild(priceBlock);
+        //
+        document.querySelector(".book .price").innerhtml =
+          thisMotoData.price + " ₽";
+        document.querySelector(".book .cubes .count").innerText =
+          thisMotoData.count;
+        function changeCount(move) {
+          switch (move) {
+            case "+":
+              // console.log(move);
+              // debug
+              thisMotoData.count++;
+              break;
+            case "-":
+              thisMotoData.count > 0 && thisMotoData.count--;
+            // console.log(move);
+            // debug
+          }
+          let price = thisMotoData.count * thisMotoData.price;
+
+          prices.innerText = price + " ₽";
+          prices.style.fontWeight = "bold";
+
+          document.querySelector(".book .cubes .count").innerText =
+            thisMotoData.count;
+        }
+        // image
+        let images = [
+          { src: "./images/cardImage.png" },
+          { src: "./images/cardImage.png" },
+          { src: "./images/cardImage.png" },
+          { src: "./images/cardImage.png" },
+        ];
+        let index = 0;
+
+        const imageEls = document.querySelector(".content-box .left .images");
+        imageEls.innerHTML = images
+          .map((el, i) => {
+            return `<img src="${el.src}" alt="" />`;
+          })
+          .join("");
+        function changeImage(move) {
+          switch (move) {
+            case "forward":
+              index < images.length - 1 ? index++ : (index = 0);
+              break;
+            case "back":
+              index > 0 ? index-- : (index = images.length - 1);
+          }
+          document.querySelector(".content-box .left .main-img").src =
+            images[index].src;
+        }
+        let texts = document.querySelector(".right .top");
+        let textsData = {
+          head: {
+            name: "head",
+            text: "КОМПЛЕКТ ЗАЩИТ ДНИЩА ДЛЯ ATV RM 800 DUO",
+          },
+          articul: {
+            name: "articul",
+            text: "Артикул 0012568",
+          },
+          weight: {
+            name: "weight",
+            text: "Вес: 17500 грамм",
+          },
+          desc: {
+            name: "desc",
+            text: `ОПИСАНИЕ ТОВАРА Алюминий 4 мм, лазерная резка, глубокий штамп,
+              порошковая окраска. Установка в штатные места, скрытый крепеж.
+              Защита порогов и отверстия для удаления грязи. Специальные силовые
+              тарельчатые шайбы для крепления. ДШВ упаковки: 1100*750*250 мм`,
+          },
+          weight_kg: {
+            name: "weight_kg",
+            text: `Вес: 17,5 кг`,
+          },
+        };
+        texts.innerHTML = Object.keys(textsData)
+          .map(
+            (e) =>
+              `<p class="${textsData[`${e}`].name}">${
+                textsData[`${e}`].text
+              }</p>`
+          )
+          .join("");
+        let opener = document.querySelector(".popup-open");
+        opener.onclick = () => {
+          document.querySelector(".pop-up").style.display = "flex";
+        };
+        document.querySelector(
+          ".pop-up .box .bottom button:first-child"
+        ).onclick = () => {
+          document.querySelector(".pop-up").style.display = "none";
+        };
+      </script>
+    </div>
+  </body>
+</html>

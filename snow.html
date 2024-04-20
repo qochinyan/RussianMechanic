@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Russian Mechanic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=PT+Sans+Narrow:wght@400;700&display=swap"
+      rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=PT+Sans+Narrow:wght@400;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="./snow.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div style="display: none" class="header-hr"><hr / ></div>
+        <a class="logo-a" href="./home.html">
+          <img class="logo" src="images/logo.png" alt=""
+        /></a>
+        <div class="links">
+          <a href="./snow.html" style="text-decoration: none">
+            <div class="snowboard">
+              <img src="images/headsnow.png" alt="" />
+              <p>СНЕГОХОДЫ</p>
+            </div>
+          </a>
+
+          <a href="./moto.html" style="text-decoration: none">
+            <div class="mototech">
+              <img src="images/headmoto.png" alt="" />
+              <p>МОТОТЕХНИКА</p>
+            </div>
+          </a>
+          <a class="avatar-a" href="./authorisation.html" style="text-decoration: none">
+            <div class="avatar">
+              <img src="images/headavatar.png" alt="" />
+              <p>Войти</p>
+            </div>
+          </a>
+          <a class="cart-a" href="./order.html" style="text-decoration: none">
+            <div class="cart">
+              <img src="images/headcart.png" alt="" />
+              <p>Корзина</p>
+            </div>
+          </a>
+        </div>
+      </header>
+      <div class="head">
+        <img src="images/winter_bg.png" alt="" />
+      </div>
+      <div class="content-box">
+        <div class="content-1"></div>
+        <div class="content-2">
+          <div class="desc">
+            <div class="chars">
+              <div class="char-table">
+                <table cellpadding="0" cellspacing="0" border="0">
+                  <tr class="grey">
+                    <th class="first-col"></th>
+                    <th class="second-col">РМ 800 Т</th>
+                    <th class="third-col">
+                      <a href="./motocompare.html">
+                        <img
+                          class="compare-but"
+                          src="images/compareBut.png"
+                          alt=""
+                      /></a>
+                    </th>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div class="photos">
+              <div class="photos-images"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>© 2004–2024 АО «Русская механика»</footer>
+      <script>
+        let viewSnowboard = {
+          name: "РМ 800 Т",
+          src: "./images/snowsale.png",
+          discount: { erased: "2 149 000 ₽*", new: "1 149 000 ₽*" },
+          characters: [
+            {
+              branch: "ДВИГАТЕЛЬ",
+              includs: [
+                {
+                  heading: "terfdsfgtgrf",
+                  description: "Четырехтактный, двухцилиндровый",
+                },
+                {
+                  heading: "any",
+                  description: "двухцилиндровый",
+                },
+              ],
+            },
+            {
+              branch: "ШАССИ",
+              includs: [
+                {
+                  heading: "Трансмиссия",
+                  description: "Механическая с вариатором",
+                },
+              ],
+            },
+            {
+              branch: "ДВИГАТЕЛЬ",
+              includs: [
+                {
+                  heading: "terfdsfgtgrf",
+                  description: "Четырехтактный, двухцилиндровый",
+                },
+                {
+                  heading: "any",
+                  description: "двухцилиндровый",
+                },
+              ],
+            },
+            {
+              branch: "ШАССИ",
+              includs: [
+                {
+                  heading: "Трансмиссия",
+                  description: "Механическая с вариатором",
+                },
+              ],
+            },
+          ],
+        };
+        document.querySelector(".content-1").innerHTML = `
+        <p class="name">РМ 800 Т</p>
+          <img src=${viewSnowboard.src} alt="" />
+          <h1 class="mobile-name"></h1>
+          <div class="prices">
+            <p class="erased">${viewSnowboard.discount.erased}</p>
+            <div class="tape">Цена со скидкой</div>
+            <p class="new">${viewSnowboard.discount.new}</p>
+            <button><img src="./images/buttonArrow.png" alt="" /></button>
+          </div>
+        `;
+
+        document.querySelectorAll("table tr")[0].innerHTML = `
+                    <th class="first-col"></th>
+                    <th class="second-col">${viewSnowboard.name}</th>
+                    <th class="third-col">
+                      <a href="./motocompare.html">
+                        <img
+                          class="compare-but"
+                          src="images/compareBut.png"
+                          alt=""/>
+                      </a>
+                    </th>
+                    `;
+
+        let table = document.getElementsByTagName("table")[0];
+        viewSnowboard.characters.forEach((el, i) => {
+          let addings = el.includs;
+          let tr1 = document.createElement("tr");
+
+          tr1.className = "grey";
+          tr1.innerHTML = `
+                    <td class="first-col">${el.branch}</td>
+                    <td class="second-col"></td>
+                    <td class="third-col"></td>
+              `;
+          table.appendChild(tr1);
+          addings.forEach((el, i) => {
+            let current = document.createElement("tr");
+            current.innerHTML = `
+                    <td class="first-col">${el.heading}</td>
+                    <td class="second-col">${el.description}</td>
+                    <td class="third-col"></td>
+              `;
+            table.appendChild(current);
+          });
+        });
+        let imageGroups = [
+          [
+            { src: "images/littleMoto.png", name: "mini" },
+            { src: "images/littleMoto2.png", name: "mini" },
+            { src: "images/littleMoto3.png", name: "mini" },
+            { src: "images/littleMoto4.png", name: "mini" },
+          ],
+          [{ name: "big", src: "images/middleMoto.png" }],
+          [
+            { src: "images/littleMoto5.png", name: "mini" },
+            { src: "images/littleMoto6.png", name: "mini" },
+            { src: "images/littleMoto7.png", name: "mini" },
+            { src: "images/littleMoto8.png", name: "mini" },
+          ],
+        ];
+        let photos = document.querySelector(".photos-images");
+        imageGroups.forEach((el) => {
+          let div = document.createElement("div");
+          el.forEach((el) => {
+            let img = document.createElement("img");
+            img.src = el.src;
+            div.appendChild(img);
+          });
+          photos.appendChild(div);
+        });
+      </script>
+    </div>
+  </body>
+</html>

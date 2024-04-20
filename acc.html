@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Russian Mechanic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=PT+Sans+Narrow:wght@400;700&display=swap"
+      rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=PT+Sans+Narrow:wght@400;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="./acc.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div style="display: none" class="header-hr"><hr / ></div>
+        <a class="logo-a" href="./home.html">
+          <img class="logo" src="images/logo.png" alt=""
+        /></a>
+        <div class="links">
+          <a href="./snow.html" style="text-decoration: none">
+            <div class="snowboard">
+              <img src="images/headsnow.png" alt="" />
+              <p>СНЕГОХОДЫ</p>
+            </div>
+          </a>
+
+          <a href="./moto.html" style="text-decoration: none">
+            <div class="mototech">
+              <img src="images/headmoto.png" alt="" />
+              <p>МОТОТЕХНИКА</p>
+            </div>
+          </a>
+          <a href="./authorisation.html" style="text-decoration: none">
+            <div class="avatar">
+              <img src="images/headavatar.png" alt="" />
+              <p>Войти</p>
+            </div>
+          </a>
+          <a href="./order.html" style="text-decoration: none">
+            <div class="cart">
+              <img src="images/headcart.png" alt="" />
+              <p>Корзина</p>
+            </div>
+          </a>
+        </div>
+      </header>
+      <div class="head">
+        <img src="images/summer_bg.png" alt="" />
+      </div>
+      <div class="content-box">
+        <div class="content-1">
+          <div class="acc"></div>
+        </div>
+      </div>
+
+      <footer>© 2004–2024 АО «Русская механика»</footer>
+      <script>
+        let viewMoto = { name: "PM 800 T  " };
+        let accs = document.querySelector(".content-1 .acc");
+        let accsData = [
+          {
+            src: "images/quad-3.png",
+            desc: "КОМПЛЕКТ ЗАЩИТ ДНИЩА ДЛЯ ATV RM 800 DUO",
+            price: "",
+            discount: { erased: "27100 ₽", new: "27100 ₽" },
+          },
+          {
+            src: "images/acc.png",
+            desc: "КОМПЛЕКТ ЗАЩИТ ДНИЩА ДЛЯ ATV RM 800 DUO",
+            price: "27100 ₽",
+          },
+          {
+            src: "images/snow-2.png",
+            desc: "КОМПЛЕКТ ЗАЩИТ ДНИЩА ДЛЯ ATV RM 800 DUO",
+            price: "27100 ₽",
+          },
+          {
+            src: "images/acc.png",
+            desc: "КОМПЛЕКТ ЗАЩИТ ДНИЩА ДЛЯ ATV RM 800 DUO",
+            price: "27100 ₽",
+          },
+          {
+            src: "images/acc.png",
+            desc: "КОМПЛЕКТ ЗАЩИТ ДНИЩА ДЛЯ ATV RM 800 DUO",
+            price: "",
+            discount: { erased: "27100 ₽", new: "27100 ₽" },
+          },
+          {
+            src: "images/acc.png",
+            desc: "КОМПЛЕКТ ЗАЩИТ ДНИЩА ДЛЯ ATV RM 800 DUO",
+            price: "27100 ₽",
+          },
+          {
+            src: "images/acc.png",
+            desc: "КОМПЛЕКТ ЗАЩИТ ДНИЩА ДЛЯ ATV RM 800 DUO",
+            price: "27100 ₽",
+          },
+          {
+            src: "images/acc.png",
+            desc: "КОМПЛЕКТ ЗАЩИТ ДНИЩА ДЛЯ ATV RM 800 DUO",
+            price: "27100 ₽",
+          },
+          {
+            src: "images/acc.png",
+            desc: "КОМПЛЕКТ ЗАЩИТ ДНИЩА ДЛЯ ATV RM 800 DUO",
+            price: "",
+            discount: { erased: "27100 ₽", new: "27100 ₽" },
+          },
+          {
+            src: "images/acc.png",
+            desc: "КОМПЛЕКТ ЗАЩИТ ДНИЩА ДЛЯ ATV RM 800 DUO",
+            price: "27100 ₽",
+          },
+          {
+            src: "images/acc.png",
+            desc: "КОМПЛЕКТ ЗАЩИТ ДНИЩА ДЛЯ ATV RM 800 DUO",
+            price: "27100 ₽",
+          },
+          {
+            src: "images/acc.png",
+            desc: "КОМПЛЕКТ ЗАЩИТ ДНИЩА ДЛЯ ATV RM 800 DUO",
+            price: "27100 ₽",
+          },
+        ];
+        let acc = document.createElement("div");
+        acc.className = "blocks";
+        acc.innerHTML = accsData
+          .map(
+            (e) =>
+              `<a href="./accCard.html" style="color:unset;text-decoration:unset;"><div class="acc-block">
+                <img src="${e.src}" alt="" class="image" />
+                <p class="desc">${e.desc}</p>
+                <div class="prices">
+                    <div class="${e.price ? "price" : "discount"}">
+                      <div class="discount-block">
+                        <div class="tape">Цена со скидкой</div>
+                        <div>
+                          <p class="erased">${e.discount?.erased || ""}</p>
+                          <p class="new">${e.discount?.new || ""}</p>
+                        </div>
+                      </div>
+                      <p class="price">27100 ₽</p>
+                    </div>
+                  </div>
+                <img class="but" src="images/accBut.png" alt="" />
+         </div></a>`
+          )
+
+          .join("");
+        //
+        let href = document.createElement("a");
+        href.href = "#";
+        href.innerHTML = `<h1>Аксессуары для ${viewMoto.name}</h1>`;
+        href.style.color = "#333333";
+        //
+        let back = document.createElement("a");
+        back.href = "./moto.html";
+        back.className = "back";
+        back.innerHTML = `<- Обратно к  ${viewMoto.name}`;
+        back.style = `position:absolute;
+        top:185px;left:20px;             
+        font-size:16px;font-weight:bold;color:#686868;
+      margin: 40px 0 0 0;text-transform:none;
+        `;
+        accs.appendChild(back);
+        accs.appendChild(href);
+        accs.appendChild(acc);
+      </script>
+    </div>
+  </body>
+</html>

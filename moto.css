@@ -1,0 +1,514 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "pt sans narrow";
+  text-transform: uppercase;
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+}
+
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  margin: 0;
+}
+
+.content-box {
+  padding: 0 0 70px 0;
+  max-width: 1144px;
+  margin: auto;
+}
+
+header {
+  z-index: 1;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  max-width: 100vw;
+  margin: auto;
+}
+header .logo {
+  width: 108px;
+  height: 161px;
+}
+header .links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  min-width: 361px;
+  height: 138px;
+  background-color: #fff;
+  opacity: 0.9;
+  padding: 0 40px;
+}
+header .links div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+}
+header .links div img {
+  width: 36px;
+}
+header .links div p {
+  font-size: 18px;
+  font-weight: normal;
+  color: #333333;
+}
+header .links div.avatar img {
+  width: 27px;
+}
+header .links div.cart img {
+  width: 23px;
+}
+
+footer {
+  background: #262626;
+  font-size: 15px;
+  text-align: center;
+  padding: 15px 0;
+  width: 100vw;
+  text-transform: none;
+  color: white;
+  font-family: "pt sans";
+  position: absolute;
+  bottom: 0;
+}
+
+.head {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.head img {
+  width: 100%;
+}
+
+.content-1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 45px;
+  padding: 30px 0;
+}
+.content-1 img {
+  max-width: 540px;
+}
+.content-1 .name {
+  font-size: 36px;
+  font-weight: bold;
+}
+.content-1 button {
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.content-1 button img {
+  width: 290px;
+  height: 48px;
+}
+.content-1 .prices {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 727px;
+  gap: 30px;
+  position: relative;
+}
+.content-1 .prices .tape {
+  position: absolute;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  width: 120px;
+  height: 20px;
+  background-color: #fff500;
+  top: -20px;
+  left: 30%;
+}
+.content-1 .prices p {
+  line-height: 20px;
+  font-size: 36px;
+}
+.content-1 .prices p.erased {
+  padding-right: 3px;
+  color: #8f8f8f;
+  text-decoration: line-through;
+  font-weight: 400;
+}
+.content-1 .prices p.new {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+.content-2 .top {
+  height: 53px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #4a4a4a;
+}
+.content-2 .top img {
+  width: 27px;
+}
+.content-2 .top p {
+  color: white;
+  font-size: 24px;
+  text-transform: none;
+}
+.content-2 .cards {
+  flex-wrap: wrap;
+  margin: 23px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.content-2 .cards .card {
+  width: 262.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.content-2 .cards .card img {
+  height: 150.56px;
+  width: 100%;
+}
+.content-2 .cards .card span {
+  font-family: "PT Sans Narrow";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  height: 75px;
+  width: 262.5px;
+  background-color: #e6e6e6;
+  text-align: center;
+  text-transform: none;
+  color: #333333;
+}
+.content-2 .desc .desc-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px;
+  gap: 12px;
+}
+.content-2 .desc .desc-head img {
+  width: 45px;
+}
+.content-2 .desc .desc-head h1 {
+  font-size: 31px;
+  color: #333333;
+}
+.content-2 .desc .desc-texts {
+  margin-bottom: 30px;
+  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+.content-2 .desc .desc-texts p {
+  font-size: 18px;
+  color: #333333;
+  text-transform: none !important;
+}
+.content-2 .desc .desc-texts p.bold {
+  font-weight: bold;
+}
+.content-2 .desc .desc-cards {
+  margin: 50px 0;
+  gap: 30px;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.content-2 .desc .desc-cards .card {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.content-2 .desc .desc-cards .card img {
+  width: 360px;
+  height: 191px;
+}
+.content-2 .desc .desc-cards .card div {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 35.5px;
+}
+.content-2 .desc .desc-cards .card div h1 {
+  font-size: 54px;
+  color: #4d4d4d;
+  line-height: 48px;
+}
+.content-2 .desc .desc-cards .card div div {
+  gap: 24px;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+}
+.content-2 .desc .desc-cards .card div div p {
+  text-transform: none;
+  color: #333333;
+  width: 300px;
+  font-size: 18px;
+}
+.content-2 .desc .desc-cards .card div div p.bold {
+  font-weight: bold;
+}
+.content-2 .desc .chars {
+  width: 100%;
+  margin: 25px 0;
+}
+.content-2 .desc .chars .char-table {
+  width: 100%;
+}
+.content-2 .desc .chars .char-table table {
+  width: 100%;
+  table-layout: fixed;
+}
+.content-2 .desc .chars .char-table table tr {
+  height: 47px;
+}
+.content-2 .desc .chars .char-table table tr th {
+  font-weight: 500;
+  font-size: 21px;
+  color: #fff;
+  text-transform: none;
+  color: #333333;
+}
+.content-2 .desc .chars .char-table table tr th.third-col {
+  width: 120px;
+}
+.content-2 .desc .chars .char-table table tr th .compare-but {
+  width: 100%;
+}
+.content-2 .desc .chars .char-table table tr th:first-child {
+  width: 300px;
+}
+.content-2 .desc .chars .char-table table tr th:nth-child(2) {
+  max-width: 720px;
+  font-weight: bold;
+}
+.content-2 .desc .chars .char-table table tr.grey {
+  background-color: #f2f2f2;
+  padding: auto;
+}
+.content-2 .desc .chars .char-table table tr.grey td {
+  padding: 0;
+}
+.content-2 .desc .chars .char-table table tr.grey td:first-child {
+  color: #cc2f2f;
+  font-size: 21px;
+}
+.content-2 .desc .chars .char-table table tr td {
+  text-transform: none !important;
+  height: 47px;
+  padding-right: 5px;
+  border-top: 1px solid #dddddd;
+  font-weight: 300;
+  font-size: 17px !important;
+  color: #333333;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+}
+.content-2 .desc .chars .char-table table tr td:first-child {
+  text-align: right;
+  width: 300px;
+}
+.content-2 .desc .chars .char-table table tr td:nth-child(2) {
+  text-align: center;
+  max-width: 720px;
+}
+.content-2 .desc .photos {
+  margin: 30px 0;
+}
+.content-2 .desc .photos .photos-images {
+  margin: 30px 0;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.content-2 .desc .photos .photos-images div:first-child,
+.content-2 .desc .photos .photos-images div:last-child {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: auto auto;
+}
+.content-2 .desc .photos .photos-images div:first-child img,
+.content-2 .desc .photos .photos-images div:last-child img {
+  width: 165px;
+  height: 107px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.content-2 .desc .photos .photos-images div:nth-child(2) img {
+  width: 360px;
+  height: 244px;
+}
+.content-2 .acc {
+  margin-bottom: 50px;
+  display: flex;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+.content-2 .acc a h1 {
+  font-size: 24px;
+  text-transform: none;
+}
+.content-2 .acc .cover {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1144px;
+  gap: 20px;
+}
+.content-2 .acc .cover .blocks {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.content-2 .acc .cover h1 {
+  margin: 37px;
+  text-align: center;
+  font-size: 24px;
+  text-decoration: underline;
+  text-transform: none;
+}
+.content-2 .acc .cover .acc-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.15);
+  width: 271px;
+  padding: 35px 40px;
+  gap: 20px;
+}
+.content-2 .acc .cover .acc-block img {
+  max-width: 177px;
+  max-height: 100px;
+}
+.content-2 .acc .cover .acc-block .desc {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+.content-2 .acc .cover .acc-block .price {
+  font-size: 20px;
+  font-weight: bold;
+}
+.content-2 .acc .cover .acc-block img.but {
+  width: 191px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  .head {
+    display: none;
+  }
+  header {
+    width: 100vw;
+    position: absolute;
+    top: 0;
+  }
+  header .header-hr {
+    display: block !important;
+    position: relative;
+    z-index: 1;
+  }
+  header .header-hr hr {
+    background-color: #c91a1a;
+    height: 3px;
+    color: transparent;
+    border: none;
+    display: block;
+    width: 100vw;
+    height: 5px;
+    position: absolute;
+    top: 100px;
+  }
+  header .links {
+    max-width: 80vw;
+    justify-content: space-between;
+    padding: 0 20px;
+    gap: 0px;
+    height: 98px;
+    min-width: 0;
+    width: 80vw;
+  }
+  header .links a div p {
+    font-size: 12px;
+  }
+  header .links a div img {
+    width: 25px;
+  }
+  header .links a div.avatar img {
+    width: 21px;
+  }
+  header .links a div.cart img {
+    width: 20px;
+  }
+  header .logo-a {
+    z-index: 2;
+  }
+  header .logo-a .logo {
+    width: 88px;
+    height: 131px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .content-1 {
+    padding-top: calc(170px - 10vw);
+  }
+  .content-1 img {
+    max-width: 360px;
+  }
+  .content-1 .prices {
+    flex-direction: column;
+  }
+  .content-1 .prices .tape {
+    position: static;
+  }
+  .content-1 .mobile-name {
+    display: inline;
+  }
+  .content-2 .desc .chars .char-table table tr td:first-child,
+  .content-2 .desc .chars .char-table table tr th:first-child,
+  .content-2 .desc .chars .char-table table tr th:nth-child(2) {
+    width: auto;
+  }
+}
+@media screen and (max-width: 1144px) {
+  .content-2 .desc .desc-texts {
+    padding: 0 50px;
+  }
+}/*# sourceMappingURL=moto.css.map */

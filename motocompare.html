@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Russian Mechanic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=PT+Sans+Narrow:wght@400;700&display=swap"
+      rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=PT+Sans+Narrow:wght@400;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="./motocompare.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div style="display: none" class="header-hr"><hr / ></div>
+        <a class="logo-a" href="./home.html">
+          <img class="logo" src="images/logo.png" alt=""
+        /></a>
+        <div class="links">
+          <a href="./snow.html" style="text-decoration: none">
+            <div class="snowboard">
+              <img src="images/headsnow.png" alt="" />
+              <p>СНЕГОХОДЫ</p>
+            </div>
+          </a>
+
+          <a href="./moto.html" style="text-decoration: none">
+            <div class="mototech">
+              <img src="images/headmoto.png" alt="" />
+              <p>МОТОТЕХНИКА</p>
+            </div>
+          </a>
+          <a class="avatar-a" href="./authorisation.html" style="text-decoration: none">
+            <div class="avatar">
+              <img src="images/headavatar.png" alt="" />
+              <p>Войти</p>
+            </div>
+          </a>
+          <a class="cart-a" href="./order.html" style="text-decoration: none">
+            <div class="cart">
+              <img src="images/headcart.png" alt="" />
+              <p>Корзина</p>
+            </div>
+          </a>
+        </div>
+      </header>
+      <div class="head">
+        <img src="images/summer_bg.png" alt="" />
+      </div>
+      <div class="content-box">
+        <div class="content-1">
+          <h1>Каталог мототехники</h1>
+          <div class="techs" style="padding: 0 10px"></div>
+        </div>
+        <div class="content-2">
+          <div class="compare">
+            <h1>Сравнения выбранной мототехники</h1>
+            <div class="char-table">
+              <table cellpadding="0" cellspacing="0" border="0">
+                <tr class="grey head-tr">
+                  <th class="first-col"></th>
+                  <th class="second-col">
+                    <select
+                      disabled
+                      name=""
+                      id=""
+                      style="text-align: center"></select>
+                    <img
+                      src="images/compareChooseBut.png"
+                      alt=""
+                      class="compareArrow" />
+                  </th>
+                  <th class="third-col choose">
+                    <select name="" id="">
+                      <option value="" disabled selected>
+                        Выберите модель
+                      </option>
+                    </select>
+                    <img
+                      src="images/compareChooseBut.png"
+                      alt=""
+                      class="compareArrow" />
+                  </th>
+                  <th class="forth-col choose" style="display: none">
+                    <select name="" id="">
+                      <option value="" disabled selected>
+                        Выберите модель
+                      </option>
+                    </select>
+                    <img
+                      src="images/compareChooseBut.png"
+                      alt=""
+                      class="compareArrow" />
+                  </th>
+                </tr>
+                <!-- 
+                <tr class="grey">
+                  <td>ДВИГАТЕЛЬ</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class="desc">
+                  <td>Тип двигателя</td>
+                  <td>Четырехтактный, двухцилиндровый</td>
+                  <td></td>
+                </tr>
+                <tr class="grey">
+                  <td>ШАССИ</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class="desc">
+                  <td>Трансмиссия</td>
+                  <td>Механическая с вариатором</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class="grey">
+                  <td>ДВИГАТЕЛЬ</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class="desc">
+                  <td>Тип двигателя</td>
+                  <td>Четырехтактный, двухцилиндровый</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class="grey">
+                  <td>ШАССИ</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class="desc">
+                  <td>Трансмиссия</td>
+                  <td>Механическая с вариатором</td>
+                  <td></td>
+                </tr>
+                <tr class="grey">
+                  <td>ДВИГАТЕЛЬ</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class="desc">
+                  <td>Тип двигателя</td>
+                  <td>Четырехтактный, двухцилиндровый</td>
+                  <td></td>
+                </tr>
+                <tr class="grey">
+                  <td>ШАССИ</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class="desc">
+                  <td>Трансмиссия</td>
+                  <td>Механическая с вариатором</td>
+                  <td></td>
+                </tr> -->
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>© 2004–2023 АО «Русская механика»</footer>
+      <script>
+        // vars
+        let catalogue = [
+          { name: "РМ 800 Т", chosen: true, src: "images/quad-1.png" },
+          { name: "РМ 650-2", chosen: false, src: "images/quad-2.png" },
+          { name: "Р500-М 2", chosen: false, src: "images/quad-3.png" },
+          {
+            name: "ГРУЗОВАЯ ПЛАТФОРМА",
+            chosen: false,
+            src: "images/quad-4.png",
+          },
+        ];
+        let carsData = [
+          {
+            name: "РМ 800 Т",
+            data: [
+              { desc: "Тип двигателя", text: "двухцилиндровый 1" },
+              { desc: "Трансмиссия", text: "двухцилиндровый 1" },
+              { desc: "Тип двигателя2", text: "двухцилиндровый 1" },
+              { desc: "Трансмиссия2", text: "двухцилиндровый 1" },
+              { desc: "Тип двигателя3", text: "двухцилиндровый 1" },
+              { desc: "Трансмиссия3", text: "двухцилиндровый 1" },
+            ],
+          },
+          {
+            name: "РМ 650-2",
+            data: [
+              { desc: "Тип двигателя", text: "двухцилиндровый 2" },
+              { desc: "Трансмиссия", text: "двухцилиндровый 2" },
+              { desc: "Тип двигателя2", text: "двухцилиндровый 2" },
+              { desc: "Трансмиссия2", text: "двухцилиндровый 2" },
+              { desc: "Тип двигателя3", text: "двухцилиндровый 2" },
+              { desc: "Трансмиссия3", text: "двухцилиндровый 2" },
+            ],
+          },
+          {
+            name: "Р500-М 2",
+            data: [
+              { desc: "Тип двигателя", text: "двухцилиндровый 3" },
+              { desc: "Трансмиссия", text: "двухцилиндровый 3" },
+              { desc: "Тип двигателя2", text: "двухцилиндровый 3" },
+              { desc: "Трансмиссия2", text: "двухцилиндровый 3" },
+              { desc: "Тип двигателя3", text: "двухцилиндровый 3" },
+              { desc: "Трансмиссия3", text: "двухцилиндровый 3" },
+            ],
+          },
+          {
+            name: "ГРУЗОВАЯ ПЛАТФОРМА",
+            data: [
+              { desc: "Тип двигателя", text: "двухцилиндровый 4" },
+              { desc: "Трансмиссия", text: "двухцилиндровый 4" },
+              { desc: "Тип двигателя2", text: "двухцилиндровый 4" },
+              { desc: "Трансмиссия2", text: "двухцилиндровый 4" },
+              { desc: "Тип двигателя3", text: "двухцилиндровый 4" },
+              { desc: "Трансмиссия3", text: "двухцилиндровый 4" },
+            ],
+          },
+        ];
+        let techs = document.querySelector(".techs");
+
+        // table
+        let firstChosen = carsData[0].name;
+        let secondChosen = null;
+        let thirdChosen = null;
+
+        let categories = [
+          { head: "ДВИГАТЕЛЬ", desc: "Тип двигателя" },
+          { head: "ШАССИ", desc: "Трансмиссия" },
+          { head: "ДВИГАТЕЛЬ2", desc: "Тип двигателя2" },
+          { head: "ШАССИ2", desc: "Трансмиссия2" },
+          { head: "ДВИГАТЕЛЬ3", desc: "Тип двигателя3" },
+          { head: "ШАССИ3", desc: "Трансмиссия3" },
+        ];
+        let table = document.querySelector("table");
+        categories.forEach((e) => {
+          let headTr = document.createElement("tr");
+          headTr.className = "grey";
+          let td = document.createElement("td");
+          let tdHead = document.createElement("td");
+          tdHead.innerText = e.head;
+          headTr.appendChild(tdHead);
+          headTr.appendChild(document.createElement("td"));
+          headTr.appendChild(document.createElement("td"));
+          let hiddenTd = document.createElement("td");
+          hiddenTd.style.display = "none";
+          headTr.appendChild(hiddenTd);
+          let tr = document.createElement("tr");
+          tr.className = "desc";
+
+          let tdDesc = td;
+          tdDesc.innerText = e.desc;
+          tr.appendChild(tdDesc);
+          tr.appendChild(document.createElement("td"));
+          tr.appendChild(document.createElement("td"));
+          let hiddenTd2 = document.createElement("td");
+          hiddenTd2.style.display = "none";
+          tr.appendChild(hiddenTd2);
+          table.appendChild(headTr);
+          table.appendChild(tr);
+        });
+        // selects
+        // generating synamic options
+        let selects = document.querySelectorAll("table tr th select");
+        selects.forEach((el, i) => {
+          carsData.forEach((e, _i) => {
+            let option = document.createElement("option");
+            option.name = carsData[i].name;
+            option.innerText = carsData[_i].name;
+            el.appendChild(option);
+          });
+        });
+
+        // let tds1 = document.querySelectorAll("table tr.desc td:nth-child(1)");
+        // console.log(tds1);
+        function changeTds(index, n) {
+          let tds = document.querySelectorAll(
+            `table tr.desc td:nth-child(${n})`
+          );
+          tds.forEach((el, i) => {
+            el.innerText =
+              carsData[index].data.find((e) => categories[i].desc == e.desc)
+                ?.text ?? "-----------------";
+          });
+        }
+        changeTds(0, 2);
+        // last select
+        let forthCol = document.querySelector("table tr th.forth-col");
+        console.log(forthCol);
+        // top techs
+
+        catalogue.forEach((el, i) => {
+          let curr = document.createElement("div");
+          curr.innerHTML = `
+                      <div class="tech-block">
+                        <img src="${el.src}" alt="" />
+                        <p>${el.name}</p>
+                      </div>
+                  `;
+
+          curr.className = "tech";
+          el.chosen ? curr.classList.add("chosen") : "";
+          curr.style.cursor = "pointer";
+          curr.addEventListener("click", () => {
+            catalogue[i].chosen = true;
+            catalogue.forEach((_el, _i) => {
+              let elems = techs.querySelectorAll(".tech");
+
+              if (el.name != _el.name) {
+                _el.chosen = false;
+                elems[_i].classList.remove("chosen");
+                elems[_i].style.padding = "1px";
+                document
+                  .querySelectorAll("table .head-tr .second-col select option")
+                  [_i].removeAttribute("selected");
+              } else {
+                _el.chosen = true;
+                elems[_i].classList.add("chosen");
+                elems[_i].style.padding = "0";
+                document
+                  .querySelectorAll("table .head-tr .second-col select option")
+                  [_i].setAttribute("selected", "selected");
+                // console.log();
+              }
+            });
+            changeTds(i, 2);
+            // console.log(catalogue);
+          });
+          techs.appendChild(curr);
+        });
+
+        //second select
+
+        let secondSelectOptions = document.querySelector(
+          "table tr .third-col select"
+        );
+
+        secondSelectOptions.addEventListener("change", (event) => {
+          let index = secondSelectOptions.selectedIndex - 1;
+          secondChosen = carsData[index].name;
+          changeTds(index, 3);
+          if (!thirdChosen) {
+            let tds = document.querySelectorAll(`table tr td:nth-child(4)`);
+            tds.forEach((td) => {
+              td.style.display = "block";
+            });
+            forthCol.style.display = "block";
+          }
+        });
+        let thirdSelectOptions = document.querySelector(
+          "table tr .forth-col select"
+        );
+        thirdSelectOptions.addEventListener("change", (event) => {
+          let index = thirdSelectOptions.selectedIndex - 1;
+          secondChosen = carsData[index].name;
+          changeTds(index, 4);
+        });
+      
+      </script>
+    </div>
+  </body>
+</html>
