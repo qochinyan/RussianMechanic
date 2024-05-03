@@ -146,17 +146,19 @@
         priceBlock.innerHTML = `<div class="${
           thisMotoData.discount.new ? "discount" : "price"
         }">
-                <div class="discount-block">
-                  <div class="tape">Цена со скидкой</div>
-                  <div>
-                    <p class="erased">${
-                      thisMotoData.discount.erased ?? ""
-                    } ₽</p>
-                    <p class="new">${thisMotoData.discount.new ?? ""} ₽</p>
-                  </div>
-                </div>
-                <p class="price">27100 ₽</p>
-              </div>`;
+                        <div class="discount-block">
+                          <div class="tape">Цена со скидкой</div>
+                          <div>
+                            <p class="erased">${
+                              thisMotoData.discount.erased ?? ""
+                            } ₽</p>
+                            <p class="new">${
+                              thisMotoData.discount.new ?? ""
+                            } ₽</p>
+                          </div>
+                        </div>
+                        <p class="price">27100 ₽</p>
+                      </div>`;
         prices.appendChild(priceBlock);
         //
         document.querySelector(".book .price").innerhtml =
@@ -185,30 +187,89 @@
         }
         // image
         let images = [
-          { src: "./images/cardImage.png" },
-          { src: "./images/cardImage.png" },
-          { src: "./images/cardImage.png" },
-          { src: "./images/cardImage.png" },
+          "./images/quad-1.png",
+          "./images/snow-1.png",
+          "./images/snow-2.png",
+          "./images/quad-2.png",
+          "./images/quad-3.png",
+          "./images/snow-3.png",
+          "./images/snow-4.png",
+          "./images/quad-4.png",
+        ];
+        let currentImages = [
+          images[0] ?? "",
+          images[1] ?? "",
+          images[2] ?? "",
+          images[3] ?? "",
         ];
         let index = 0;
-
+        let currentIndex = 0;
+        document.querySelector(".content-box .left .main-img img").src =
+          images[0];
         const imageEls = document.querySelector(".content-box .left .images");
-        imageEls.innerHTML = images
-          .map((el, i) => {
-            return `<img src="${el.src}" alt="" />`;
-          })
-          .join("");
-        function changeImage(move) {
-          switch (move) {
-            case "forward":
-              index < images.length - 1 ? index++ : (index = 0);
-              break;
-            case "back":
-              index > 0 ? index-- : (index = images.length - 1);
-          }
-          document.querySelector(".content-box .left .main-img").src =
-            images[index].src;
+        function changeBorder() {
+          let chosenIndex = currentImages.findIndex((e) => e === images[index]);
+
+          document
+            .querySelectorAll(".content-box .left .images img")
+            .forEach((e, i) => {
+              i === chosenIndex
+                ? (e.style.border = "1px solid grey")
+                : (e.style.border = "none");
+              e.onclick = () => {
+                changeImage("", i);
+              };
+            });
         }
+
+        function changeImage(move, _index) {
+          if (move) {
+            switch (move) {
+              case "forward":
+                index < images.length - 1 ? index++ : (index = 0);
+                currentIndex < 3
+                  ? currentIndex++
+                  : changeCurrentImages("forward");
+                break;
+              case "back":
+                index > 0 ? index-- : (index = images.length - 1);
+                currentIndex > 0 ? currentIndex-- : changeCurrentImages("back");
+            }
+          }
+          if (Number.isInteger(_index)) {
+            currentIndex = _index;
+            index = images.findIndex((e) => e === currentImages[_index]);
+          }
+
+          document.querySelector(".content-box .left .main-img img").src =
+            images[index];
+          changeBorder();
+        }
+
+        function changeCurrentImages(move) {
+          if (images.length <= 4) {
+            currentImages = [...images];
+          } else {
+            if (move === "forward") {
+              let temp = [...currentImages];
+              temp.shift();
+              temp.push(images[index]);
+              currentImages = [...temp];
+            } else if (move == "back") {
+              let temp = [...currentImages];
+              temp.pop();
+              temp.unshift(images[index]);
+              currentImages = [...temp];
+            }
+          }
+          imageEls.innerHTML = currentImages
+            .map((el, i) => {
+              return `<img src="${el}" alt="" />`;
+            })
+            .join("");
+        }
+        changeCurrentImages();
+        changeBorder();
         let texts = document.querySelector(".right .top");
         let textsData = {
           head: {
@@ -226,9 +287,9 @@
           desc: {
             name: "desc",
             text: `ОПИСАНИЕ ТОВАРА Алюминий 4 мм, лазерная резка, глубокий штамп,
-              порошковая окраска. Установка в штатные места, скрытый крепеж.
-              Защита порогов и отверстия для удаления грязи. Специальные силовые
-              тарельчатые шайбы для крепления. ДШВ упаковки: 1100*750*250 мм`,
+                      порошковая окраска. Установка в штатные места, скрытый крепеж.
+                      Защита порогов и отверстия для удаления грязи. Специальные силовые
+                      тарельчатые шайбы для крепления. ДШВ упаковки: 1100*750*250 мм`,
           },
           weight_kg: {
             name: "weight_kg",
